@@ -471,9 +471,16 @@ void listar_servicios() {
     Servicio servicios[1000];
     int n = cargarServicios(servicios, 1000);
     if (n == 0) { printf("No hay servicios.\n"); return; }
+
     printf("=== Servicios ===\n");
+
     for (int i = 0; i < n; i++) {
-        printf("%s | %s | %.2f | %s\n", servicios[i].id, servicios[i].nombre, servicios[i].costo, servicios[i].estado);
+        printf("%s | %s | %.2f | %s | %s\n",
+               servicios[i].id,
+               servicios[i].nombre,
+               servicios[i].costo,
+               servicios[i].descripcion,  
+               servicios[i].estado);       
     }
 }
 
@@ -844,3 +851,5 @@ int main() {
 
     return 0;
 }
+
+
